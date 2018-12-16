@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./test --recursive",
+    "start": "static-server",
+    "showroom": "showroom"
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +15,10 @@
     "@polymer/polymer": "^3.1.0",
     "@polymer/lit-element": "https://github.com/barakedry/lit-element.git",
     "lit-html": "^1.0.0-rc.1"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "showroom": "^0.9.3",
+    "static-server": "^2.2.1"
   }
 }

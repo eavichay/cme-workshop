@@ -136,6 +136,8 @@ class MyDemoCard extends mixin(DraggableMixin, FancyCloseMixin)(LitElement) {
 
   firstUpdated () {
     this.cardElement = this.shadowRoot.querySelector('ui-card');
+    this.draggableCapabilities.destroy();
+    this.draggableCapabilities.init({handle: this.shadowRoot.querySelector('div[slot="header"]')});
   }
 
   setValue (number) {
