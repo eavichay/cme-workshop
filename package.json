@@ -1,0 +1,17 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cme-ui-components": "file:../webapps/packages/cme-ui-components",
+    "@polymer/polymer": "^3.1.0",
+    "@polymer/lit-element": "https://github.com/barakedry/lit-element.git",
+    "lit-html": "^1.0.0-rc.1"
+  }
+}
