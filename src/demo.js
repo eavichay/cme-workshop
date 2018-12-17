@@ -2,21 +2,22 @@ import {
   LitElement, html
 } from '/node_modules/@polymer/lit-element/lit-element.js';
 
-
+import '/node_modules/cme-ui-components/components/ui-menu.js';
+import '/node_modules/cme-ui-components/components/ui-menu-item.js';
 
 class MyDemoCard extends LitElement {
 
   constructor () {
     super();
 
-    this.someValue = 100;
+    this.someValue = 1e6;
   }
 
   static get properties () {
     return {
       someValue: {
         type: Number,
-        value: 100,
+        value: 1e6,
       }
     }
   }
@@ -38,8 +39,13 @@ class MyDemoCard extends LitElement {
     <div>
         My value is ${this.someValue}
         <br/>
-        <button
-          @click=${() => this.someValue *= 2}>Change my value</button>
+
+        <ui-menu id="my-menu">
+          <ui-menu-item @selected=${() => this.someValue = 10e6}>10M</ui-menu-item>
+          <ui-menu-item @selected=${() => this.someValue = 100e6}>100M</ui-menu-item>
+          <ui-menu-item @selected=${() => this.someValue = 500e6}>500M</ui-menu-item>
+        </ui-menu>
+      </div>
     </div>
 
 
@@ -83,8 +89,7 @@ customElements.define('my-demo-card', MyDemoCard);
 
 /*
 
-import '/node_modules/cme-ui-components/components/ui-menu.js';
-import '/node_modules/cme-ui-components/components/ui-menu-item.js';
+
 
 */
 
@@ -93,13 +98,7 @@ import '/node_modules/cme-ui-components/components/ui-menu-item.js';
 
 /*
 
-    <div id="menu">
-      <ui-menu @selected=${(event) => {this.onMenuItemSelected(event)}}>
-        <ui-menu-item value="10">Item 1</ui-menu-item>
-        <ui-menu-item value="100">Item 2</ui-menu-item>
-        <ui-menu-item value="500">Item 3</ui-menu-item>
-      </ui-menu>
-    </div>
+
 
 
 */
