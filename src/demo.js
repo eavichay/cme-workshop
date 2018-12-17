@@ -12,6 +12,15 @@ class MyDemoCard extends LitElement {
     this.someValue = 100;
   }
 
+  static get properties () {
+    return {
+      someValue: {
+        type: Number,
+        value: 100,
+      }
+    }
+  }
+
   render () {
     return html`
 
@@ -28,6 +37,9 @@ class MyDemoCard extends LitElement {
     <h1>I'm a web component</h1>
     <div>
         My value is ${this.someValue}
+        <br/>
+        <button
+          @click=${() => this.someValue *= 2}>Change my value</button>
     </div>
 
 
@@ -61,14 +73,7 @@ customElements.define('my-demo-card', MyDemoCard);
 
 /*
 
-  static get properties () {
-    return {
-      someValue: {
-        type: Number,
-        value: 100
-      }
-    }
-  }
+
 
 
 
