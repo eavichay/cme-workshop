@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha ./test --recursive",
-    "start": "static-server",
+    "start": "static-server -f -z",
     "showroom": "showroom"
   },
   "author": "",
