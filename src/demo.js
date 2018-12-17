@@ -4,6 +4,8 @@ import {
 
 import '/node_modules/cme-ui-components/components/ui-menu.js';
 import '/node_modules/cme-ui-components/components/ui-menu-item.js';
+import '/node_modules/cme-ui-components/components/ui-popup.js';
+import '/node_modules/cme-ui-components/components/fx/quantity-label.js';
 
 class MyDemoCard extends LitElement {
 
@@ -37,14 +39,20 @@ class MyDemoCard extends LitElement {
     
     <h1>I'm a web component</h1>
     <div>
-        My value is ${this.someValue}
+        I want to sell <quantity-label .value=${this.someValue} formatting="full"></quantity-label>
         <br/>
 
-        <ui-menu id="my-menu">
-          <ui-menu-item @selected=${() => this.someValue = 10e6}>10M</ui-menu-item>
-          <ui-menu-item @selected=${() => this.someValue = 100e6}>100M</ui-menu-item>
-          <ui-menu-item @selected=${() => this.someValue = 500e6}>500M</ui-menu-item>
-        </ui-menu>
+        <ui-popup>
+            <!-- nice "hamburger" icon for trigger, should be slotted to "trigger" -->
+            <i slot="trigger" class="fa fa-bars">Menu</i>
+            <!-- content -->
+            <ui-menu id="my-menu">
+            <ui-menu-item @selected=${() => this.someValue = 10e6}>10M</ui-menu-item>
+            <ui-menu-item @selected=${() => this.someValue = 100e6}>100M</ui-menu-item>
+            <ui-menu-item @selected=${() => this.someValue = 500e6}>500M</ui-menu-item>
+          </ui-menu>
+        </ui-popup>
+
       </div>
     </div>
 
